@@ -100,6 +100,21 @@ var
 (*---------------------------------------------------------------------------*)
 Procedure tri_bull(var t:tab;n:integer);
 Begin
+var
+  i:integer;
+  v:boolean;
+Begin
+repeat
+  v:=false;
+  for i:=1 to n-1 do
+     begin
+        if t[i]>t[i+1] then
+          begin
+          v:=true;
+          permut(t[i],t[i+1]);
+        end;
+      end;   
+  until not(v);
 end;
 (*---------------------------------------------------------------------------*)
 procedure affi(var f:fiche);
